@@ -47,7 +47,6 @@ final class Target
         'PROPERTY'   => self::TARGET_PROPERTY,
         'ANNOTATION' => self::TARGET_ANNOTATION,
         'CONSTANT'   => self::TARGET_CONSTANT,
-        'CONST'      => self::TARGET_CONSTANT,
     ];
 
     /**
