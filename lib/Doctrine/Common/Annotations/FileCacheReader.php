@@ -162,7 +162,7 @@ class FileCacheReader implements Reader, ReaderWithConstantsAnnotations
     /**
      * {@inheritDoc}
      */
-    public function getConstantAnnotations(\ReflectionClassConstant $constant)
+    public function getConstantAnnotations(\ReflectionClassConstant $constant): array
     {
         $class = $constant->getDeclaringClass();
         if ( ! isset($this->classNameHashes[$class->name])) {
