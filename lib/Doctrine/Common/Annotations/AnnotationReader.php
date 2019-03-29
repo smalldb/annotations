@@ -180,8 +180,6 @@ class AnnotationReader implements Reader
      *
      * Initializes a new AnnotationReader.
      *
-     * @param DocParser $parser
-     *
      * @throws AnnotationException
      */
     public function __construct(DocParser $parser = null)
@@ -335,8 +333,6 @@ class AnnotationReader implements Reader
     /**
      * Returns the ignored annotations for the given class.
      *
-     * @param \ReflectionClass $class
-     *
      * @return array
      */
     private function getIgnoredAnnotationNames(ReflectionClass $class)
@@ -354,8 +350,6 @@ class AnnotationReader implements Reader
     /**
      * Retrieves imports.
      *
-     * @param \ReflectionClass $class
-     *
      * @return array
      */
     private function getClassImports(ReflectionClass $class)
@@ -372,8 +366,6 @@ class AnnotationReader implements Reader
 
     /**
      * Retrieves imports for methods.
-     *
-     * @param \ReflectionMethod $method
      *
      * @return array
      */
@@ -398,8 +390,6 @@ class AnnotationReader implements Reader
     /**
      * Retrieves imports for properties.
      *
-     * @param \ReflectionProperty $property
-     *
      * @return array
      */
     private function getPropertyImports(ReflectionProperty $property)
@@ -420,8 +410,6 @@ class AnnotationReader implements Reader
 
     /**
      * Retrieves imports for constants.
-     *
-     * @param \ReflectionClassConstant $constant
      *
      * @return array
      */
@@ -446,8 +434,6 @@ class AnnotationReader implements Reader
     
     /**
      * Collects parsing metadata for a given class.
-     *
-     * @param \ReflectionClass $class
      */
     private function collectParsingMetadata(ReflectionClass $class)
     {
