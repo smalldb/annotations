@@ -29,7 +29,7 @@ namespace Doctrine\Common\Annotations;
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Fabio B. Silva <fabio.bat.silva@gmail.com>
  */
-class SimpleAnnotationReader implements Reader
+class SimpleAnnotationReader implements Reader, ReaderWithConstantsAnnotations
 {
     /**
      * @var DocParser

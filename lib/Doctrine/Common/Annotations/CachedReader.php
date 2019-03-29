@@ -28,7 +28,7 @@ use ReflectionClass;
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
-final class CachedReader implements Reader
+final class CachedReader implements Reader, ReaderWithConstantsAnnotations
 {
     /**
      * @var Reader
