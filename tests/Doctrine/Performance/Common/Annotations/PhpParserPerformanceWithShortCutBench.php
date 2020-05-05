@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Doctrine\Performance\Common\Annotations;
 
-use Doctrine\Common\Annotations\PhpParser;
+use Smalldb\Annotations\PhpParser;
 use Doctrine\Tests\Common\Annotations\Fixtures\NamespacedSingleClassLOC1000;
 use ReflectionClass;
 

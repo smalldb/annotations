@@ -17,13 +17,13 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Annotations;
+namespace Smalldb\Annotations;
 
-use Doctrine\Common\Annotations\Annotation\Attribute;
+use Smalldb\Annotations\Annotation\Attribute;
 use ReflectionClass;
-use Doctrine\Common\Annotations\Annotation\Enum;
-use Doctrine\Common\Annotations\Annotation\Target;
-use Doctrine\Common\Annotations\Annotation\Attributes;
+use Smalldb\Annotations\Annotation\Enum;
+use Smalldb\Annotations\Annotation\Target;
+use Smalldb\Annotations\Annotation\Attributes;
 
 /**
  * A parser for docblock annotations.
@@ -54,7 +54,7 @@ final class DocParser
     /**
      * The lexer.
      *
-     * @var \Doctrine\Common\Annotations\DocLexer
+     * @var \Smalldb\Annotations\DocLexer
      */
     private $lexer;
 
@@ -68,7 +68,7 @@ final class DocParser
     /**
      * Doc parser used to collect annotation target.
      *
-     * @var \Doctrine\Common\Annotations\DocParser
+     * @var \Smalldb\Annotations\DocParser
      */
     private static $metadataParser;
 
@@ -197,7 +197,7 @@ final class DocParser
                     'type'      =>'array',
                     'required'  =>true,
                     'array_type'=>'Doctrine\Common\Annotations\Annotation\Attribute',
-                    'value'     =>'array<Doctrine\Common\Annotations\Annotation\Attribute>'
+                    'value'     =>'array<Smalldb\Annotations\Annotation\Attribute>'
                 ]
              ],
         ],

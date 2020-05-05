@@ -17,7 +17,7 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Annotations;
+namespace Smalldb\Annotations;
 
 /**
  * Interface for annotation readers.

@@ -2,8 +2,8 @@
 
 namespace Doctrine\Tests\Common\Annotations;
 
-use Doctrine\Common\Annotations\AnnotationReader;
-use Doctrine\Common\Annotations\FileCacheReader;
+use Smalldb\Annotations\AnnotationReader;
+use Smalldb\Annotations\FileCacheReader;
 
 class FileCacheReaderTest extends AbstractReaderTest
 {

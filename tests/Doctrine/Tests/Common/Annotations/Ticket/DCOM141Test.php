@@ -2,7 +2,7 @@
 
 namespace Doctrine\Tests\Common\Annotations\Ticket;
 
-use Doctrine\Common\Annotations\AnnotationReader;
+use Smalldb\Annotations\AnnotationReader;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 

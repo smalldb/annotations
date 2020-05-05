@@ -17,17 +17,16 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Annotations;
+namespace Smalldb\Annotations;
 
 /**
  * File cache reader for annotations.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Benjamin Eberlei <kontakt@beberlei.de>
- *
  * @deprecated the FileCacheReader is deprecated and will be removed
  *             in version 2.0.0 of doctrine/annotations. Please use the
- *             {@see \Doctrine\Common\Annotations\CachedReader} instead.
+ *             {@see \Smalldb\Annotations\CachedReader} instead.
  */
 class FileCacheReader implements Reader
 {

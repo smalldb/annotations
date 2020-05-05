@@ -17,7 +17,7 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Annotations;
+namespace Smalldb\Annotations;
 
 /**
  * Allows the reader to be used in-place of Doctrine's reader.

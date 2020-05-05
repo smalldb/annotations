@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Doctrine\Performance\Common\Annotations;
 
-use Doctrine\Common\Annotations\DocLexer;
+use Smalldb\Annotations\DocLexer;
 
 /**
  * @BeforeMethods({"initializeMethod", "initialize"})

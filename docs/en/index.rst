@@ -57,14 +57,14 @@ Reading annotations
 
 The access to the annotations happens by reflection of the class
 containing them. There are multiple reader-classes implementing the
-``Doctrine\Common\Annotations\Reader`` interface, that can access the
+``Smalldb\Annotations\Reader`` interface, that can access the
 annotations of a class. A common one is
-``Doctrine\Common\Annotations\AnnotationReader``:
+``Smalldb\Annotations\AnnotationReader``:
 
 .. code-block:: php
 
-    use Doctrine\Common\Annotations\AnnotationReader;
-    use Doctrine\Common\Annotations\AnnotationRegistry;
+    use Smalldb\Annotations\AnnotationReader;
+    use Smalldb\Annotations\AnnotationRegistry;
 
     // Deprecated and will be removed in 2.0 but currently needed
     AnnotationRegistry::registerLoader('class_exists');

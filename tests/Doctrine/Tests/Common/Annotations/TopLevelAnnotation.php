@@ -1,6 +1,6 @@
 <?php
 
-use Doctrine\Common\Annotations\Annotation;
+use Smalldb\Annotations\Annotation;
 
 /** @Annotation */
 class TopLevelAnnotation extends Annotation

@@ -2,7 +2,7 @@
 
 namespace Doctrine\Tests\Common\Annotations;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
+use Smalldb\Annotations\AnnotationRegistry;
 use Doctrine\Tests\Common\Annotations\Fixtures\Annotation\CanBeAutoLoaded;
 use Doctrine\Tests\Common\Annotations\Fixtures\Annotation\LoadedUsingRegisterFile;
 use Doctrine\Tests\Common\Annotations\Fixtures\Annotation\ShouldNeverBeLoaded;

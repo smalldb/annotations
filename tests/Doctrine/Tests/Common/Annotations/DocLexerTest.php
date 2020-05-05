@@ -2,7 +2,7 @@
 
 namespace Doctrine\Tests\Common\Annotations;
 
-use Doctrine\Common\Annotations\DocLexer;
+use Smalldb\Annotations\DocLexer;
 use PHPUnit\Framework\TestCase;
 
 class DocLexerTest extends TestCase

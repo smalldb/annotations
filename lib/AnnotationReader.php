@@ -17,10 +17,10 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Annotations;
+namespace Smalldb\Annotations;
 
-use Doctrine\Common\Annotations\Annotation\IgnoreAnnotation;
-use Doctrine\Common\Annotations\Annotation\Target;
+use Smalldb\Annotations\Annotation\IgnoreAnnotation;
+use Smalldb\Annotations\Annotation\Target;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -143,21 +143,21 @@ class AnnotationReader implements Reader
     /**
      * Annotations parser.
      *
-     * @var \Doctrine\Common\Annotations\DocParser
+     * @var \Smalldb\Annotations\DocParser
      */
     private $parser;
 
     /**
      * Annotations parser used to collect parsing metadata.
      *
-     * @var \Doctrine\Common\Annotations\DocParser
+     * @var \Smalldb\Annotations\DocParser
      */
     private $preParser;
 
     /**
      * PHP parser used to collect imports.
      *
-     * @var \Doctrine\Common\Annotations\PhpParser
+     * @var \Smalldb\Annotations\PhpParser
      */
     private $phpParser;
 
