@@ -1,12 +1,24 @@
-# Doctrine Annotations
+# Smalldb Annotations
 
-[![Build Status](https://travis-ci.org/doctrine/annotations.svg?branch=master)](https://travis-ci.org/doctrine/annotations)
-[![Dependency Status](https://www.versioneye.com/package/php--doctrine--annotations/badge.png)](https://www.versioneye.com/package/php--doctrine--annotations)
-[![Reference Status](https://www.versioneye.com/php/doctrine:annotations/reference_badge.svg)](https://www.versioneye.com/php/doctrine:annotations/references)
-[![Total Downloads](https://poser.pugx.org/doctrine/annotations/downloads.png)](https://packagist.org/packages/doctrine/annotations)
-[![Latest Stable Version](https://poser.pugx.org/doctrine/annotations/v/stable.png)](https://packagist.org/packages/doctrine/annotations)
+Docblock Annotations Parser library based on [Doctrine Annotations](https://github.com/doctrine/annotations).
 
-Docblock Annotations Parser library (extracted from [Doctrine Common](https://github.com/doctrine/common)).
+The motivation for this fork of Doctrine Annotations is to ease the implementation
+of backwards-incompatible features which are difficult to incorporate in such a widely used library. 
+
+**Added features:**
+
+  - Support for Class constant annotations --- see `Reader::getConstantAnnotations()`.
+  
+  - `RecursiveAnnotationReader` collects annotations from parent classes in addition to the given class
+    and returns the list of all annotations sorted from the oldest ancestor to the requested class.
+  
+**Removed features:**
+
+  - All caching readers are removed, because the annotations are further processed
+    and the final result should be cached.
+
+  - `AnnotationRegistry` is removed as well in favor of the use of standard PHP autoloader.
+
 
 ## Documentation
 
