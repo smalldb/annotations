@@ -25,15 +25,16 @@
         "sort-packages": true
     },
     "autoload": {
-        "psr-4": { "Smalldb\\Annotations\\": "lib" }
+        "psr-4": {
+            "Smalldb\\Annotations\\": "lib"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "Doctrine\\Performance\\Common\\Annotations\\": "tests/Doctrine/Performance/Common/Annotations",
-            "Doctrine\\Tests\\Common\\Annotations\\": "tests/Doctrine/Tests/Common/Annotations"
+            "Smalldb\\Annotations\\Tests\\": "tests"
         },
         "files": [
-            "tests/Doctrine/Tests/Common/Annotations/Fixtures/SingleClassLOC1000.php"
+            "tests/Fixtures/SingleClassLOC1000.php"
         ]
     },
     "extra": {

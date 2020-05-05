@@ -10,5 +10,5 @@ parameters:
     ignoreErrors:
         - '#Class Doctrine_Tests_Common_Annotations_Fixtures_ClassNoNamespaceNoComment not found#'
         - '#Instantiated class Doctrine_Tests_Common_Annotations_Fixtures_ClassNoNamespaceNoComment not found#'
-        - '#Property Doctrine\\Tests\\Common\\Annotations\\DummyClassNonAnnotationProblem::\$foo has unknown class#'
+        - '#Property Smalldb\\Annotations\\Tests\\DummyClassNonAnnotationProblem::\$foo has unknown class#'
         - '#Call to an undefined method ReflectionClass::getUseStatements\(\)#'

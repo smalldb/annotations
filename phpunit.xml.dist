@@ -6,21 +6,20 @@
          beStrictAboutTodoAnnotatedTests="true"
          failOnRisky="true"
          failOnWarning="true"
-         bootstrap="./tests/Doctrine/Tests/TestInit.php"
 >
     <php>
         <ini name="error_reporting" value="-1" />
     </php>
 
     <testsuites>
-        <testsuite name="Doctrine Annotations Test Suite">
-            <directory>./tests/Doctrine/</directory>
+        <testsuite name="Smalldb Annotations Test Suite">
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./lib/Doctrine/</directory>
+            <directory suffix=".php">./lib/</directory>
         </whitelist>
     </filter>
 </phpunit>
