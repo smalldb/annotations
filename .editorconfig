@@ -1,0 +1,12 @@
+; Unix-style newlines
+[*]
+end_of_line = LF
+
+[*.json]
+indent_style = space
+indent_size = 4
+
+[*.php]
+indent_style = space
+indent_size = 4
+
