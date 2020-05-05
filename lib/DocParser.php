@@ -88,14 +88,6 @@ final class DocParser
     private $imports = [];
 
     /**
-     * This hashmap is used internally to cache results of class_exists()
-     * look-ups.
-     *
-     * @var array
-     */
-    private $classExists = [];
-
-    /**
      * Whether annotations that have not been imported should be ignored.
      *
      * @var boolean
@@ -447,29 +439,6 @@ final class DocParser
     }
 
     /**
-     * Attempts to check if a class exists or not. This never goes through the PHP autoloading mechanism
-     * but uses the {@link AnnotationRegistry} to load classes.
-     *
-     * @param string $fqcn
-     *
-     * @return boolean
-     */
-    private function classExists($fqcn)
-    {
-        if (isset($this->classExists[$fqcn])) {
-            return $this->classExists[$fqcn];
-        }
-
-        // first check if the class already exists, maybe loaded through another AnnotationReader
-        if (class_exists($fqcn, false)) {
-            return $this->classExists[$fqcn] = true;
-        }
-
-        // final check, does this class exist?
-        return $this->classExists[$fqcn] = AnnotationRegistry::loadAnnotationClass($fqcn);
-    }
-
-    /**
      * Collects parsing metadata for a given annotation class
      *
      * @param string $name The annotation name
@@ -489,11 +458,6 @@ final class DocParser
                 'attribute'     => Annotation\Attribute::class,
                 'attributes'    => Annotation\Attributes::class
             ]);
-
-            AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Enum.php');
-            AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Target.php');
-            AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Attribute.php');
-            AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Attributes.php');
         }
 
         $class      = new \ReflectionClass($name);
@@ -703,7 +667,7 @@ final class DocParser
 
             if ($this->namespaces) {
                 foreach ($this->namespaces as $namespace) {
-                    if ($this->classExists($namespace.'\\'.$name)) {
+                    if (class_exists($namespace.'\\'.$name)) {
                         $name = $namespace.'\\'.$name;
                         $found = true;
                         break;
@@ -714,14 +678,14 @@ final class DocParser
                 $name = (false !== $pos)
                     ? $namespace . substr($name, $pos)
                     : $namespace;
-                $found = $this->classExists($name);
+                $found = class_exists($name);
             } elseif ( ! isset($this->ignoredAnnotationNames[$name])
                 && isset($this->imports['__NAMESPACE__'])
-                && $this->classExists($this->imports['__NAMESPACE__'] . '\\' . $name)
+                && class_exists($this->imports['__NAMESPACE__'] . '\\' . $name)
             ) {
                 $name  = $this->imports['__NAMESPACE__'].'\\'.$name;
                 $found = true;
-            } elseif (! isset($this->ignoredAnnotationNames[$name]) && $this->classExists($name)) {
+            } elseif (! isset($this->ignoredAnnotationNames[$name]) && class_exists($name)) {
                 $found = true;
             }
 
@@ -736,7 +700,7 @@ final class DocParser
 
         $name = ltrim($name,'\\');
 
-        if ( ! $this->classExists($name)) {
+        if ( ! class_exists($name)) {
             throw AnnotationException::semanticalError(sprintf('The annotation "@%s" in %s does not exist, or could not be auto-loaded.', $name, $this->context));
         }
 
