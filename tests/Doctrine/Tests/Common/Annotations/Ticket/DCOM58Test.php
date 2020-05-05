@@ -76,17 +76,6 @@ class DCOM58Test extends TestCase
         self::assertInstanceOf(\Entity::class, $annots[0]);
     }
 
-
-    public function testIssueSimpleAnnotationReader()
-    {
-        $reader     = new SimpleAnnotationReader();
-        $reader->addNamespace('Doctrine\Tests\Common\Annotations\Ticket\Doctrine\ORM\Mapping');
-        $annots     = $reader->getClassAnnotations(new \ReflectionClass(__NAMESPACE__."\MappedClass"));
-
-        self::assertCount(1, $annots);
-        self::assertInstanceOf(Doctrine\ORM\Mapping\Entity::class, $annots[0]);
-    }
-
 }
 
 /**
