@@ -193,7 +193,7 @@ class AnnotationReaderTest extends AbstractReaderTest
         self::assertEmpty($reader->getPropertyAnnotations($ref->getProperty('bar')));
         self::assertEmpty($reader->getMethodAnnotations($ref->getMethod('foo')));
 
-        $this->expectException('\Doctrine\Common\Annotations\AnnotationException');
+        $this->expectException(\Smalldb\Annotations\AnnotationException::class);
         $this->expectExceptionMessage('[Semantical Error] The annotation "@Template" in method Doctrine\Tests\Common\Annotations\Fixtures\ClassWithPHPStanGenericsAnnotations::twigTemplateFunctionName() was never imported.');
         self::assertEmpty($reader->getMethodAnnotations($ref->getMethod('twigTemplateFunctionName')));
     }
