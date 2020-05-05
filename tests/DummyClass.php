@@ -20,6 +20,13 @@ use Smalldb\Annotations\Tests\DummyJoinColumn;
 class DummyClass
 {
     /**
+     * A nice constant.
+     *
+     * @DummyAnnotation(dummyValue="constantHello")
+     */
+    const SOME_CONSTANT = "foo";
+
+    /**
      * A nice property.
      *
      * @var mixed

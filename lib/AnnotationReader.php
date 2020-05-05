@@ -180,8 +180,6 @@ class AnnotationReader implements Reader
      *
      * Initializes a new AnnotationReader.
      *
-     * @param DocParser $parser
-     *
      * @throws AnnotationException
      */
     public function __construct(DocParser $parser = null)
@@ -299,9 +297,39 @@ class AnnotationReader implements Reader
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getConstantAnnotations(\ReflectionClassConstant $constant): array
+    {
+        $class   = $constant->getDeclaringClass();
+        $context = 'constant ' . $class->getName() . "::" . $constant->getName();
+
+        $this->parser->setTarget(Target::TARGET_CONSTANT);
+        $this->parser->setImports($this->getConstantImports($constant));
+        $this->parser->setIgnoredAnnotationNames($this->getIgnoredAnnotationNames($class));
+        $this->parser->setIgnoredAnnotationNamespaces(self::$globalIgnoredNamespaces);
+
+        return $this->parser->parse($constant->getDocComment(), $context);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getConstantAnnotation(\ReflectionClassConstant $constant, $annotationName)
+    {
+        $annotations = $this->getConstantAnnotations($constant);
+
+        foreach ($annotations as $annotation) {
+            if ($annotation instanceof $annotationName) {
+                return $annotation;
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Returns the ignored annotations for the given class.
-     *
-     * @param \ReflectionClass $class
      *
      * @return array
      */
@@ -320,8 +348,6 @@ class AnnotationReader implements Reader
     /**
      * Retrieves imports.
      *
-     * @param \ReflectionClass $class
-     *
      * @return array
      */
     private function getClassImports(ReflectionClass $class)
@@ -338,8 +364,6 @@ class AnnotationReader implements Reader
 
     /**
      * Retrieves imports for methods.
-     *
-     * @param \ReflectionMethod $method
      *
      * @return array
      */
@@ -364,8 +388,6 @@ class AnnotationReader implements Reader
     /**
      * Retrieves imports for properties.
      *
-     * @param \ReflectionProperty $property
-     *
      * @return array
      */
     private function getPropertyImports(ReflectionProperty $property)
@@ -385,9 +407,31 @@ class AnnotationReader implements Reader
     }
 
     /**
-     * Collects parsing metadata for a given class.
+     * Retrieves imports for constants.
      *
-     * @param \ReflectionClass $class
+     * @return object[]
+     */
+    private function getConstantImports(\ReflectionClassConstant $constant): array
+    {
+        $class = $constant->getDeclaringClass();
+        $classImports = $this->getClassImports($class);
+        if (!method_exists($class, 'getTraits')) {
+            return $classImports;
+        }
+
+        $traitImports = array();
+
+        foreach ($class->getTraits() as $trait) {
+            if ($trait->hasConstant($constant->getName())) {
+                $traitImports = array_merge($traitImports, $this->phpParser->parseClass($trait));
+            }
+        }
+
+        return array_merge($classImports, $traitImports);
+    }
+    
+    /**
+     * Collects parsing metadata for a given class.
      */
     private function collectParsingMetadata(ReflectionClass $class)
     {
