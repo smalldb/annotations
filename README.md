@@ -24,6 +24,11 @@ of backwards-incompatible features which are difficult to incorporate in such a 
 
 See the [doctrine-project website](https://www.doctrine-project.org/projects/doctrine-annotations/en/latest/index.html).
 
+## Contributing
+
+When making a pull request, make sure your changes follow the
+[Coding Standard Guidelines](https://www.doctrine-project.org/projects/doctrine-coding-standard/en/latest/reference/index.html#introduction).
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).

@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Docblock Annotations Parser based on Doctrine Annotations",
     "keywords": ["annotations", "docblock", "parser"],
-    "homepage": "http://smalldb.org",
+    "homepage": "https://smalldb.org/",
     "license": "MIT",
     "authors": [
         {"name": "Guilherme Blanco", "email": "guilhermeblanco@gmail.com"},
@@ -14,7 +14,7 @@
         {"name": "Josef Kufner", "email": "josef@kufner.cz"}
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.1",
         "ext-tokenizer": "*",
         "doctrine/lexer": "1.*"
     },
