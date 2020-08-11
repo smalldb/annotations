@@ -5,6 +5,7 @@ namespace Smalldb\Annotations\Tests;
 use Smalldb\Annotations\AnnotationException;
 use Smalldb\Annotations\AnnotationReader;
 use Smalldb\Annotations\DocParser;
+use Smalldb\Annotations\Reader;
 use Smalldb\Annotations\Tests\Fixtures\Annotation\SingleUseAnnotation;
 use Smalldb\Annotations\Tests\Fixtures\ClassWithFullPathUseStatement;
 use Smalldb\Annotations\Tests\Fixtures\ClassWithImportedIgnoredAnnotation;
@@ -20,10 +21,9 @@ use Smalldb\Annotations\Tests\Fixtures\IgnoredNamespaces\AnnotatedWithAlias;
 class AnnotationReaderTest extends AbstractReaderTest
 {
     /**
-     * @param DocParser|null $parser
      * @return AnnotationReader
      */
-    protected function getReader(DocParser $parser = null)
+    protected function getReader(DocParser $parser = null): Reader
     {
         return new AnnotationReader($parser);
     }

@@ -119,7 +119,7 @@ final class AnnotationWithAttributes
     }
 
     /**
-     * @return array<Doctrine\Tests\Common\Annotations\Fixtures\AnnotationTargetAll>
+     * @return array<Smalldb\Annotations\Tests\Fixtures\AnnotationTargetAll>
      */
     public function getArrayOfAnnotations()
     {

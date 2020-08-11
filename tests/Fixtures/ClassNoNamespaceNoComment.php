@@ -2,6 +2,6 @@
 
 use Smalldb\Annotations\Tests\Fixtures\AnnotationTargetClass;
 
-class Doctrine_Tests_Common_Annotations_Fixtures_ClassNoNamespaceNoComment {
+class Smalldb_Annotations_Tests_Fixtures_ClassNoNamespaceNoComment {
 
 }
